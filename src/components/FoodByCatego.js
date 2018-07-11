@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LinesEllipsis from "react-lines-ellipsis";
 
 class FoodByCatego extends Component {
   renderPicture(i, catego, menu) {
@@ -17,10 +18,19 @@ class FoodByCatego extends Component {
     for (let i = 0; i < menu[catego].length; i++) {
       FoodCards.push(
         <li key={menu[catego][i].id} className="foodCard">
-          <div>
+          <div className="foodInfos">
             <h3>{menu[catego][i].title}</h3>
-            <p>{menu[catego][i].description}</p>
-            <p>{menu[catego][i].price + "€"}</p>
+            <div className="foodDescription">
+              {/*<p>{menu[catego][i].description}</p>*/}
+              <LinesEllipsis
+                text={menu[catego][i].description}
+                maxLine="2"
+                ellipsis="..."
+                trimRight
+                basedOn="letters"
+              />
+            </div>
+            <p className="foodPrice">{menu[catego][i].price + "€"}</p>
           </div>
           {this.renderPicture(i, catego, menu)}
         </li>
