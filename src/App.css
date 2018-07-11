@@ -1,0 +1,63 @@
+.screenSize {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+body {
+  background: white;
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  align-content: flex-start;
+  height: 50px;
+  overflow: hidden;
+  border-bottom: solid 1px #eeeeee;
+}
+
+.restDescription {
+  display: flex;
+  padding: 30px 0;
+  height: 130px;
+}
+
+.restaurantImage {
+  height: 100%;
+  width: 300px;
+  object-fit: cover;
+  margin-left: 30px;
+  border-radius: 3px;
+}
+
+.background-grey {
+  background-color: #eeeeee;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.foodCard {
+  width: 33%;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  height: 200px;
+}
+
+.foodPic {
+  height: 70px;
+  width: 70px;
+  object-fit: cover;
+}
+
+.foodChoice {
+  width: 600px;
+}
