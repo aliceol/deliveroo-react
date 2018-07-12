@@ -27,11 +27,20 @@ class Catego extends Component {
       if (this.props.menu[category].length > 0) {
         categoriesList.push(<h2 key={i}>{category}</h2>);
         const items = [];
+
         for (let j = 0; j < this.props.menu[category].length; j++) {
+          let activeCard = false;
+          for (let k = 0; k < this.props.activeFoodCards.length; k++) {
+            if (
+              this.props.menu[category][j].id === this.props.activeFoodCards[k]
+            ) {
+              activeCard = true;
+            }
+          }
           items.push(
             <li
-              key={j}
-              className="foodCard"
+              key={this.props.menu[category][j].id}
+              className={(activeCard ? "selected-card " : "") + "foodCard"}
               onClick={() => this.props.addMenu(this.props.menu[category][j])}
             >
               <div className="foodInfos">

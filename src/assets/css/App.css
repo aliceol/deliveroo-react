@@ -37,7 +37,7 @@ h1 {
   width: 300px;
   object-fit: cover;
   margin-left: 30px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .background-grey {
@@ -71,7 +71,7 @@ h1 {
   font-weight: 600;
 }
 
-.cart-validation:hover {
+.cart-full:hover {
   background-color: #18a295;
   cursor: pointer;
 }
@@ -151,7 +151,7 @@ ul {
 }
 
 .foodCard {
-  width: 300px;
+  width: 295px;
   background-color: white;
   padding: 20px;
   margin-bottom: 10px;
@@ -159,6 +159,16 @@ ul {
   height: 120px;
   justify-content: space-between;
   flex-direction: row;
+  overflow: hidden;
+  border-radius: 2px;
+  border-left: solid white 5px;
+  transform: scaleY(1);
+}
+
+.selected-card {
+  border-left: solid 5px #21cbbc;
+  transform: scaleY(1);
+  transition: transform 15s ease-in-out;
 }
 
 .foodCard:hover {
@@ -173,7 +183,7 @@ ul {
   width: 90px;
   object-fit: cover;
   margin-left: 10px;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .foodChoice {

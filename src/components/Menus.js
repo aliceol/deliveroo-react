@@ -9,11 +9,13 @@ class Menus extends Component {
     restaurant: {},
     menus: {},
     cart: [],
+    activeFoodCards: [],
     isLoading: true
   };
 
   decrement = id => {
     const newCart = [...this.state.cart];
+    const newActiveFoodCards = [...this.state.activeFoodCards];
 
     for (let i = 0; i < newCart.length; i++) {
       if (newCart[i].id === id && newCart[i].quantity > 0) {
@@ -21,13 +23,15 @@ class Menus extends Component {
           newCart[i].quantity--;
         } else {
           newCart.splice(i, 1);
+          newActiveFoodCards.splice(i, 1);
         }
         break;
       }
     }
 
     this.setState({
-      cart: newCart
+      cart: newCart,
+      activeFoodCards: newActiveFoodCards
     });
   };
 
@@ -48,14 +52,13 @@ class Menus extends Component {
 
   addMenu = menu => {
     const newCart = [...this.state.cart];
+    const newActiveFoodCards = [...this.state.activeFoodCards];
 
     let menuFound = false;
     for (let i = 0; i < newCart.length; i++) {
       if (newCart[i].id === menu.id) {
         menuFound = true;
-
         newCart[i].quantity++;
-
         break;
       }
     }
@@ -67,9 +70,11 @@ class Menus extends Component {
         quantity: 1,
         price: menu.price
       });
+      newActiveFoodCards.push(menu.id);
     }
     this.setState({
-      cart: newCart
+      cart: newCart,
+      activeFoodCards: newActiveFoodCards
     });
   };
 
@@ -84,6 +89,7 @@ class Menus extends Component {
               restaurant={this.state.restaurant}
               menu={this.state.menus}
               cart={this.state.cart}
+              activeFoodCards={this.state.activeFoodCards}
               decrement={this.decrement}
               increment={this.increment}
               addMenu={this.addMenu}

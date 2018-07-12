@@ -38,7 +38,7 @@ class Cart extends Component {
 
       return (
         <div className="Cart">
-          <div className="cart-validation">Valider mon panier</div>
+          <div className="cart-validation cart-full">Valider mon panier</div>
           <div className="cart-content">
             <ul>{basketMenus}</ul>
             <div className="subTotal basket-line">
