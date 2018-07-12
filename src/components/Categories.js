@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Cart from "./Cart.js";
+import numberToString from "./NumberToString.js";
 
 import LinesEllipsis from "react-lines-ellipsis";
 
@@ -45,7 +46,7 @@ class Catego extends Component {
                   />
                 </div>
                 <p className="foodPrice">
-                  {this.props.menu[category][j].price + "€"}
+                  {numberToString(this.props.menu[category][j].price) + "€"}
                 </p>
               </div>
 
