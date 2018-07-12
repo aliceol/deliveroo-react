@@ -8,6 +8,13 @@
 body {
   background: white;
   font-family: "Adelle Sans";
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-family: "Stratos Deliveroo Web";
+  font-weight: 600;
+  font-style: normal;
 }
 
 .Header {

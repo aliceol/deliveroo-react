@@ -30,7 +30,7 @@ class FoodByCatego extends Component {
                 basedOn="letters"
               />
             </div>
-            <p className="foodPrice">{menu[catego][i].price + "€"}</p>
+            <p className="foodPrice">{menu[catego][i].price + " €"}</p>
           </div>
           {this.renderPicture(i, catego, menu)}
         </li>

@@ -31,7 +31,7 @@ class Cart extends Component {
               +
             </button>
             <div className="cart-menu-title">{this.props.cart[i].title}</div>
-            <div className="price">{numberToString(price) + "€"}</div>
+            <div className="price">{numberToString(price) + " €"}</div>
           </li>
         );
       }
@@ -43,14 +43,14 @@ class Cart extends Component {
             <ul>{basketMenus}</ul>
             <div className="subTotal basket-line">
               <span>Sous-total</span>{" "}
-              <span>{numberToString(subTotal) + "€"}</span>
+              <span>{numberToString(subTotal) + " €"}</span>
             </div>
             <div className="basket-line">
-              <span>Frais de Livraison</span> <span>2,50€</span>
+              <span>Frais de Livraison</span> <span>2,50 €</span>
             </div>
             <div className="cart-total basket-line">
               {" "}
-              <span>Total</span> <span>{numberToString(total) + "€"}</span>
+              <span>Total</span> <span>{numberToString(total) + " €"}</span>
             </div>
           </div>
         </div>
