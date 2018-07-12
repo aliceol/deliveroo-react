@@ -34,6 +34,27 @@ body {
   background-color: #eeeeee;
 }
 
+.contents {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Cart {
+  flex: 1;
+  margin-left: 20px;
+  padding: 10px;
+  background-color: white;
+  height: fit-content;
+  min-height: 200px;
+}
+
+.cart-validation {
+  background-color: #cccccc;
+  padding: 5px;
+  text-align: center;
+  border-radius: 2px;
+}
+
 ul {
   list-style: none;
   padding: 0;

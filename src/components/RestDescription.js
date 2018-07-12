@@ -9,7 +9,9 @@ class RestDescription extends Component {
           <p>{this.props.restaurant.description}</p>
         </div>
         <img
-          src={this.props.restaurant.picture}
+          src={`${
+            this.props.restaurant.picture
+          }?width=320&height=180&auto=webp&format=jpg&fit=crop&v=1512028706)`}
           alt="restaurant"
           className="restaurantImage"
         />
