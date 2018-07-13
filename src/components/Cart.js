@@ -1,12 +1,19 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import numberToString from "./NumberToString.js";
 
 class Cart extends Component {
   render() {
+    let temporaryClass = "";
+    if (!this.props.isEditable) {
+      temporaryClass = "hidden";
+    }
     if (this.props.cart.length === 0) {
       return (
         <div className="Cart">
-          <div className="cart-validation cart-empty">Valider mon panier</div>
+          <div className="cart-validation cart-empty empty-cart-validation">
+            Valider mon panier
+          </div>
           <div className="empty-cart">Votre panier est vide</div>
         </div>
       );
@@ -23,22 +30,39 @@ class Cart extends Component {
 
         basketMenus.push(
           <li key={this.props.cart[i].id} className="cart-menu">
-            <button onClick={() => this.props.decrement(this.props.cart[i].id)}>
-              -
+            <button
+              className={"cart-button " + temporaryClass}
+              onClick={() => this.props.decrement(this.props.cart[i].id)}
+            >
+              <i className="fas fa-minus-circle" />
             </button>
             <div className="cart-quantity">{quantity}</div>
-            <button onClick={() => this.props.increment(this.props.cart[i].id)}>
-              +
+            <button
+              className={"cart-button " + temporaryClass}
+              onClick={() => this.props.increment(this.props.cart[i].id)}
+            >
+              <i className="fas fa-plus-circle" />
             </button>
             <div className="cart-menu-title">{this.props.cart[i].title}</div>
             <div className="price">{numberToString(price) + " €"}</div>
           </li>
         );
       }
-
       return (
         <div className="Cart">
-          <div className="cart-validation cart-full">Valider mon panier</div>
+          <Link
+            to={{
+              pathname: "/checkout",
+              state: {
+                cart: this.props.cart,
+                restaurant: this.props.restaurant
+              }
+            }}
+          >
+            <div className={"cart-validation cart-full " + temporaryClass}>
+              Valider mon panier
+            </div>
+          </Link>
           <div className="cart-content">
             <ul>{basketMenus}</ul>
             <div className="subTotal basket-line">

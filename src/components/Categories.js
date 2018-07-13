@@ -68,7 +68,7 @@ class Catego extends Component {
     }
 
     return (
-      <div className="background-grey">
+      <div className="grey-background">
         <br />
         <div className=" screenSize contents">
           <div className="foodChoice">{categoriesList}</div>
@@ -76,6 +76,8 @@ class Catego extends Component {
             cart={this.props.cart}
             decrement={this.props.decrement}
             increment={this.props.increment}
+            restaurant={this.props.restaurant}
+            isEditable={true}
           />
         </div>
       </div>

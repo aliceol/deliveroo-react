@@ -3,6 +3,7 @@ import "./assets/css/App.css";
 import { BrowserRouter as Router, Route /* , Link  */ } from "react-router-dom";
 
 import Menus from "./components/Menus.js";
+import Checkout from "./components/Checkout.js";
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <div>
           {/* <Link to="/menus">Menus</Link> */}
           <Route path="/menus" component={Menus} />
+          <Route path="/checkout" component={Checkout} />
         </div>
       </Router>
     );

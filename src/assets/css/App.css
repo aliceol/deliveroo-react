@@ -15,6 +15,7 @@ h1 {
   font-family: "Stratos Deliveroo Web";
   font-weight: 600;
   font-style: normal;
+  margin: 0;
 }
 
 .Header {
@@ -28,19 +29,20 @@ h1 {
 
 .restDescription {
   display: flex;
+  flex: 1;
   padding: 30px 0;
-  height: 130px;
+  height: 150px;
 }
 
 .restaurantImage {
   height: 100%;
-  width: 300px;
+  width: 350px;
   object-fit: cover;
   margin-left: 30px;
   border-radius: 2px;
 }
 
-.background-grey {
+.grey-background {
   background-color: #eeeeee;
 }
 
@@ -50,18 +52,16 @@ h1 {
 }
 
 .Cart {
-  flex: 1;
-  margin-left: 20px;
+  width: 300px;
   padding: 10px;
   background-color: white;
   height: fit-content;
   min-height: 200px;
+  box-shadow: 0 0 30px rgba(57, 57, 57, 0.1);
 }
 
 .cart-validation {
   display: flex;
-  background-color: #21cbbc;
-  color: white;
   padding: 5px;
   text-align: center;
   border-radius: 2px;
@@ -71,12 +71,21 @@ h1 {
   font-weight: 600;
 }
 
+a {
+  text-decoration: none;
+}
+
+.cart-full {
+  background-color: #21cbbc;
+  color: white;
+}
+
 .cart-full:hover {
   background-color: #18a295;
   cursor: pointer;
 }
 
-.cart-empty {
+.empty-cart-validation {
   background-color: #cccccc;
   color: #666666;
 }
@@ -102,26 +111,25 @@ h1 {
   align-items: center;
 }
 
-button {
-  display: flex;
+.cart-button {
   color: #21cbbc;
-  border: solid #21cbbc 2px;
-  border-radius: 50%;
-  height: 25px;
-  width: 25px;
-  justify-content: center;
-  align-content: center;
+  font-size: 15px;
   margin: 5px;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-button:hover {
+.cart-button:hover {
   color: #18a295;
   border: solid #18a295 2px;
   cursor: pointer;
+  border: none;
 }
 
 .cart-menu-title {
   flex: 1;
+  margin-left: 5px;
 }
 .subTotal {
   padding: 5px 0;
@@ -151,24 +159,28 @@ ul {
 }
 
 .foodCard {
-  width: 295px;
+  width: calc(50% - 60px);
+  margin: 0 20px 20px 0;
   background-color: white;
-  padding: 20px;
-  margin-bottom: 10px;
+  padding: 15px;
   display: flex;
-  height: 120px;
+  height: 110px;
   justify-content: space-between;
   flex-direction: row;
   overflow: hidden;
   border-radius: 2px;
   border-left: solid white 5px;
-  transform: scaleY(1);
+}
+
+.green-line {
+  border-left: solid 4px #21cbbc;
+  transform: scaleY(0);
 }
 
 .selected-card {
-  border-left: solid 5px #21cbbc;
+  border-left: solid 4px #21cbbc;
   transform: scaleY(1);
-  transition: transform 15s ease-in-out;
+  transition-timing-function: transform 0.15s ease-in-out;
 }
 
 .foodCard:hover {
@@ -179,15 +191,15 @@ ul {
 }
 
 .foodPic {
-  height: 90px;
-  width: 90px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   margin-left: 10px;
   border-radius: 2px;
 }
 
 .foodChoice {
-  width: 690px;
+  flex: 1;
 }
 
 h3 {
@@ -208,4 +220,126 @@ h3 {
   line-height: 22px;
   color: grey;
   margin: 0;
+}
+
+form {
+  color: #757575;
+}
+
+.inline {
+  display: flex;
+  margin: 20px 0;
+  justify-content: space-between;
+}
+
+.form-element {
+  flex: 1;
+  margin: 5px 0;
+}
+
+input {
+  width: calc(100% - 30px);
+  height: 30px;
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  font-size: 12px;
+  border: solid 1px #cccccc;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.checkout {
+  display: flex;
+  padding: 30px 0;
+}
+
+.white-background {
+  background-color: white;
+}
+
+.form-frame {
+  padding: 40px;
+  flex: 1;
+  margin-right: 30px;
+}
+
+.cart-checkout {
+  width: 300px;
+  min-height: 150px;
+  height: fit-content;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+}
+.address-details {
+  font-size: 12px;
+}
+
+textarea {
+  width: calc(100% - 30px);
+  height: 50px;
+  border-radius: 2px;
+  margin: 10px 0;
+  padding: 5px 10px;
+  font-size: 12px;
+  border: solid 1px #cccccc;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.end-of-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+hr {
+  width: 100%;
+}
+.confirmation-text {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 30px;
+  color: black;
+}
+
+.confirmation-button {
+  width: fit-content;
+  height: 50px;
+  border-radius: 2px;
+  margin: 10px auto;
+  padding: 5px 20px;
+  font-size: 12px;
+  background-color: #21cbbc;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  border: none;
+  background-image: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.confirmation-button:hover {
+  background-color: #18a295;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
 }
