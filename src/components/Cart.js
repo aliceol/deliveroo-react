@@ -4,9 +4,9 @@ import numberToString from "./NumberToString.js";
 
 class Cart extends Component {
   render() {
-    let temporaryClass = "";
+    let lightCart = false;
     if (!this.props.isEditable) {
-      temporaryClass = "hidden";
+      lightCart = true;
     }
     if (this.props.cart.length === 0) {
       return (
@@ -30,19 +30,27 @@ class Cart extends Component {
 
         basketMenus.push(
           <li key={this.props.cart[i].id} className="cart-menu">
-            <button
-              className={"cart-button " + temporaryClass}
-              onClick={() => this.props.decrement(this.props.cart[i].id)}
-            >
-              <i className="fas fa-minus-circle" />
-            </button>
+            {lightCart ? (
+              ""
+            ) : (
+              <button
+                className="cart-button"
+                onClick={() => this.props.decrement(this.props.cart[i].id)}
+              >
+                <i className="fas fa-minus-circle" />
+              </button>
+            )}
             <div className="cart-quantity">{quantity}</div>
-            <button
-              className={"cart-button " + temporaryClass}
-              onClick={() => this.props.increment(this.props.cart[i].id)}
-            >
-              <i className="fas fa-plus-circle" />
-            </button>
+            {lightCart ? (
+              ""
+            ) : (
+              <button
+                className="cart-button"
+                onClick={() => this.props.increment(this.props.cart[i].id)}
+              >
+                <i className="fas fa-plus-circle" />
+              </button>
+            )}
             <div className="cart-menu-title">{this.props.cart[i].title}</div>
             <div className="price">{numberToString(price) + " €"}</div>
           </li>
@@ -59,9 +67,13 @@ class Cart extends Component {
               }
             }}
           >
-            <div className={"cart-validation cart-full " + temporaryClass}>
-              Valider mon panier
-            </div>
+            {lightCart ? (
+              ""
+            ) : (
+              <div className="cart-validation cart-full">
+                Valider mon panier
+              </div>
+            )}
           </Link>
           <div className="cart-content">
             <ul>{basketMenus}</ul>
