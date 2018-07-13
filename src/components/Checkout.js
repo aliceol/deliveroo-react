@@ -5,6 +5,7 @@ import Cart from "./Cart.js";
 
 class Checkout extends Component {
   render() {
+    window.scrollTo(0, 0);
     return (
       <Fragment>
         <Header />
