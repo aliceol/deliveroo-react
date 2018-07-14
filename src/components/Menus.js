@@ -8,7 +8,7 @@ class Menus extends Component {
   state = {
     restaurant: {},
     menus: {},
-    cart: [],
+    cart: this.props.location.state.cart ? this.props.location.state.cart : [],
     activeFoodCards: [],
     isLoading: true
   };
@@ -82,7 +82,7 @@ class Menus extends Component {
     if (!this.state.isLoading) {
       return (
         <div>
-          <Header />
+          <Header cart={this.state.cart} />
           <div>
             <RestDescription restaurant={this.state.restaurant} />
             <Catego

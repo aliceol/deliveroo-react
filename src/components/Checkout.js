@@ -8,7 +8,7 @@ class Checkout extends Component {
     window.scrollTo(0, 0);
     return (
       <Fragment>
-        <Header />
+        <Header cart={this.props.location.state.cart} />
         <div className="grey-background ">
           <div className="screenSize checkout">
             <div className="white-background form-frame">

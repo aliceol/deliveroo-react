@@ -23,11 +23,19 @@ class Form extends Component {
     });
   };
 
+  validateForm = () => {
+    var x = document.forms["myForm"]["fname"].value;
+    if (x === "") {
+      alert("Name must be filled out");
+      return false;
+    }
+  };
+
   render() {
     return (
       <fragment>
         <h4>Adresse de livraison</h4>
-        <form>
+        <form onsubmit="validateForm()">
           <div className="inline">
             <span className="form-element">
               <div className="label">Prénom</div>
