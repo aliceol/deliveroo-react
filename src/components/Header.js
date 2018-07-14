@@ -11,7 +11,7 @@ class Header extends Component {
               to={{
                 pathname: "/menus",
                 state: {
-                  cart: this.props.cart
+                  cart: this.props.cart ? this.props.cart : []
                 }
               }}
             >

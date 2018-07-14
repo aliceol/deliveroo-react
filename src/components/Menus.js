@@ -8,7 +8,7 @@ class Menus extends Component {
   state = {
     restaurant: {},
     menus: {},
-    cart: this.props.location.state.cart ? this.props.location.state.cart : [],
+    cart: this.props.location.state ? this.props.location.state.cart : [],
     activeFoodCards: [],
     isLoading: true
   };
