@@ -57,7 +57,7 @@ class Cart extends Component {
         );
       }
       return (
-        <div className="Cart">
+        <div className="Cart ">
           <Link
             to={{
               pathname: "/checkout",

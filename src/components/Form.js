@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 class Form extends Component {
   state = {
@@ -11,7 +11,8 @@ class Form extends Component {
     postalCode: "",
     city: "",
     phone: "",
-    message: ""
+    message: "",
+    cart: this.props.cart
   };
 
   handleChange = event => {
@@ -23,19 +24,24 @@ class Form extends Component {
     });
   };
 
-  validateForm = () => {
-    var x = document.forms["myForm"]["fname"].value;
-    if (x === "") {
-      alert("Name must be filled out");
-      return false;
+  handleSubmit = event => {
+    alert("commande validée");
+    event.preventDefault();
+    this.props.history.push({
+      pathname: "/menus",
+      state: { cart: [] }
+    });
+
+    if (window.confirm) {
+      return;
     }
   };
 
   render() {
     return (
-      <fragment>
+      <Fragment>
         <h4>Adresse de livraison</h4>
-        <form onsubmit="validateForm()">
+        <form onSubmit={this.handleSubmit}>
           <div className="inline">
             <span className="form-element">
               <div className="label">Prénom</div>
@@ -162,7 +168,7 @@ class Form extends Component {
             />
           </div>
         </form>
-      </fragment>
+      </Fragment>
     );
   }
 }

@@ -33,6 +33,7 @@ h1 {
   background-color: white;
   border-bottom: solid 1px #eeeeee;
   width: 100%;
+  z-index: 100;
 }
 
 .restDescription {
@@ -66,6 +67,11 @@ h1 {
   height: fit-content;
   min-height: 200px;
   box-shadow: 0 0 30px rgba(57, 57, 57, 0.1);
+}
+
+.sticky-cart {
+  position: fixed;
+  top: 0;
 }
 
 .cart-validation {
@@ -273,6 +279,7 @@ input {
   padding: 40px;
   flex: 1;
   margin-right: 30px;
+  height: fit-content;
 }
 
 .cart-checkout {

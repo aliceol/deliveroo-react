@@ -98,7 +98,7 @@ class Menus extends Component {
         </div>
       );
     } else {
-      return <div>isLoading</div>;
+      return <div>Page is loading...</div>;
     }
   }
 
